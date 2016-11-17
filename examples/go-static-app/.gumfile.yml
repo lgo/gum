@@ -1,0 +1,5 @@
+application:
+  name: Example Golang App
+  location: main.go
+  language:
+    go: 1.7
