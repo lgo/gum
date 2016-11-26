@@ -1,8 +1,10 @@
 package containers
 
-import "github.com/fsouza/go-dockerclient"
+import (
+	"github.com/fsouza/go-dockerclient"
+)
 
-var client = initClient()
+var Client = initClient()
 
 func initClient() *docker.Client {
 	endpoint := "unix:///var/run/docker.sock"
@@ -14,7 +16,7 @@ func initClient() *docker.Client {
 }
 
 func Pull(repository string, tag string) error {
-	return client.PullImage(docker.PullImageOptions{
+	return Client.PullImage(docker.PullImageOptions{
 		Repository: repository,
 		Tag:        tag,
 	}, docker.AuthConfiguration{})

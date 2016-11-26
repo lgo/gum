@@ -1,6 +1,9 @@
 package cmds
 
 import (
+	"os"
+	"path/filepath"
+
 	"github.com/urfave/cli"
 	"github.com/xLegoz/gum/configuration"
 )
@@ -13,7 +16,15 @@ func check(e error) {
 
 func OperationUp(c *cli.Context) error {
 	var config = configuration.Configuration{}
-	err := config.LoadConfiguration(c.Args().First())
+	dir, err := filepath.Abs("./" + c.Args().First())
+	check(err)
+	err = os.Chdir(dir)
+	check(err)
+	err = config.LoadAndCheckConfiguration()
+	check(err)
+	err = config.Prepare()
+	check(err)
+	err = config.Start()
 	check(err)
 	return nil
 }

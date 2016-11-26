@@ -3,3 +3,9 @@ application:
   location: main.go
   language:
     go: 1.7
+utilities:
+  filewatcher:
+    action: full-restart
+    type: compiled
+    # type: interpreted
+    # files: *.py

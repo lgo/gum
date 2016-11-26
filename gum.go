@@ -5,6 +5,9 @@ import (
 
 	"github.com/urfave/cli"
 	"github.com/xLegoz/gum/cmds"
+
+	_ "github.com/xLegoz/gum/services/datastores"
+	_ "github.com/xLegoz/gum/services/languages"
 )
 
 func main() {

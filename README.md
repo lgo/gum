@@ -9,7 +9,8 @@ This is a work-in-progress and isn't in a working state yet.
 
 
 ## TODO:
-- Populate the TODO list... heh
+- Create a YAML registar for registering various levels of YAML parser (pre-application, in application, in services, ...)
+- Build YAML config parser (register settings / sections) and define functions to run on commands with a priority (essentially dictate order) for a) running things b) docker configurations
 
 ## Usage
 

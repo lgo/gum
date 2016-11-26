@@ -1,11 +1,11 @@
 application:
   name: Example Python Web App
-  cmd: python3 main.py
+  location: app.py
   language:
     python: 3.5
-  services:
-    postgresql:
-      version: 9.4
-      address: localhost:5432
   proxies:
     80: localhost:8000
+services:
+  postgresql:
+    version: 9.4
+    address: localhost:5432
